@@ -55,4 +55,8 @@ class Student
     student
   end
 
+  def self.new_from_db(row)
+    Student.new(row[1], row[2])
+  end
+
 end
