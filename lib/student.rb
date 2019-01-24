@@ -4,7 +4,7 @@ class Student
 
   attr_accessor :id, :name, :grade
 
-  def initialize(id = nil, name, grade)
+  def initialize(name, grade, id = nil)
     @id = id
     @name = name
     @grade = grade
@@ -56,9 +56,7 @@ class Student
   end
 
   def self.new_from_db(row)
-    student = Student.new(row[1], row[2])
-    student.id = row[0]
-    student
+    student = Student.new(row[1], row[2], row[0])
   end
 
 end
